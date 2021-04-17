@@ -159,6 +159,10 @@ table {
   margin-bottom: 8px;
 }
 
+.m-1 {
+  margin: 8px;
+}
+
 .ml-2 {
   margin-left: 16px;
 }
