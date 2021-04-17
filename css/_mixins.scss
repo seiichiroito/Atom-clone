@@ -1,0 +1,13 @@
+//* Spacing
+$small: 8px;
+.m-ls {
+  margin-left: $small;
+}
+.m-rs {
+  margin-right: $small;
+}
+
+.m-lrs {
+  margin-left: $small;
+  margin-right: $small;
+}
