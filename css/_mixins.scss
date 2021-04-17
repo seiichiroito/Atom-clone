@@ -234,3 +234,12 @@ $space-3: 24px;
     background-color: $hc-secondary;
   }
 }
+
+// Link
+.link {
+  color: $c-primary;
+  text-decoration: none;
+  &:hover {
+    color: $hc-primary;
+  }
+}

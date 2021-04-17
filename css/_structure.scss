@@ -2,7 +2,7 @@
 
 ////////////////////////? GENERAL ?////////////////////////
 * {
-  outline: 1px solid #555;
+  // outline: 1px solid #555;
 }
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
@@ -382,13 +382,6 @@ body {
   font-size: $fz-body;
   color: $c-letter;
   line-height: $lh-paragraph;
-  a {
-    color: $c-primary;
-    text-decoration: none;
-    &:hover {
-      color: $hc-primary;
-    }
-  }
 }
 
 .main__button {
@@ -435,13 +428,6 @@ body {
     font-size: $fz-body;
     color: $c-letter;
     line-height: $lh-paragraph;
-    a {
-      color: $c-primary;
-      text-decoration: none;
-      &:hover {
-        color: $hc-primary;
-      }
-    }
   }
   > a {
     display: inline-block;
@@ -456,6 +442,61 @@ body {
 ////////////////////////? CONTACT ?////////////////////////
 .contact {
   background-color: $bgc-contact;
+}
+.contact__container {
+  display: grid;
+  gap: 50px;
+  max-width: 580px;
+  @media (min-width: 1100px) {
+    max-width: 854px;
+  }
+  @media (min-width: 1100px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  h2 {
+    font-size: $fz-heading-2;
+    line-height: $lh-header;
+    color: $c-letter;
+    font-weight: $fw-light;
+  }
+}
+
+.contact__github {
+  p {
+    color: $c-letter;
+    line-height: $lh-paragraph;
+  }
+}
+.contact__button {
+  display: flex;
+}
+
+.contact__sns {
+  position: relative;
+}
+
+.rocket {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  display: none;
+  @media screen and (min-width: 660px) {
+    display: block;
+  }
+}
+
+.contact__lists {
+  li {
+    display: flex;
+    align-items: center;
+    p {
+      color: $c-letter;
+      font-size: $fz-body;
+
+      line-height: $lh-paragraph;
+      flex-basis: 100px;
+    }
+  }
 }
 
 ////////////////////////? FOOTER ?////////////////////////
