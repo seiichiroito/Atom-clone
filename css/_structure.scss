@@ -2,7 +2,7 @@
 
 ////////////* GENERAL *////////////
 * {
-  outline: 1px solid #555;
+  // outline: 1px solid #555;
 }
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
@@ -14,7 +14,6 @@ body {
 }
 
 .section {
-  outline: 1px solid aqua;
   display: flex;
 }
 
@@ -32,7 +31,6 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(50px, auto);
-  gap: 20px;
   @media (min-width: 900px) {
     grid-template-columns: repeat(8, 1fr);
   }
@@ -83,8 +81,156 @@ body {
 
 ////////////* HERO *//////////
 .hero {
-  //   height: 988px;
   background-color: $bgc-main;
+  .hero__container {
+    grid-template-areas:
+      ". . . ."
+      ". . . ."
+      "header header header header"
+      ". . . ."
+      "main main main main"
+      "footer footer footer footer";
+
+    @media screen and (min-width: 900px) {
+      grid-template-areas:
+        ". . . . . . . ."
+        ". . . . . . . ."
+        "header header header header header header header header"
+        ". . . . . . . ."
+        "main main main main main main main main"
+        "footer footer footer footer footer footer footer footer";
+    }
+    @media screen and (min-width: 1100px) {
+      grid-template-areas:
+        ". . . . . . . ."
+        ". . . . . . . ."
+        "header header header header header main main main"
+        "header header header header header main main main"
+        "footer footer footer footer footer footer footer footer";
+    }
+    @media screen and (min-width: 100px) and (min-height: 1000px) {
+      grid-template-areas:
+        ". . . . . . . ."
+        ". . . . . . . ."
+        "header header header header header header header header"
+        ". . . . . . . ."
+        "main main main main main main main main"
+        "footer footer footer footer footer footer footer footer";
+    }
+  }
+  .hero__header {
+    grid-area: header;
+    height: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    .atom-circles {
+      position: absolute;
+      img {
+        transform: translate(-50%, -50%);
+        position: absolute;
+      }
+    }
+    .atom-blue {
+      position: absolute;
+      transform: translate(-280px, -100px);
+    }
+  }
+  .hero__main {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    ul {
+      border-radius: $radius-2;
+      border: 1px solid $c-border;
+      display: flex;
+      flex-direction: column;
+
+      @media screen and (min-width: 1100px) and (min-height: 1000px) {
+        flex-direction: row;
+      }
+      li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      li + li {
+        border-top: 1px solid $c-border;
+        @media screen and (min-width: 1100px) and (min-height: 1000px) {
+          border-top: initial;
+          border-left: 1px solid $c-border;
+        }
+      }
+    }
+    .hero__note {
+      align-items: center;
+      h3 {
+        font-size: $fz-heading-3;
+        color: $c-letter;
+        line-height: $lh-header;
+      }
+      p {
+        color: $c-letter-dark;
+        font-size: $fz-paragraph;
+        line-height: $lh-paragraph;
+      }
+      a {
+        color: $c-letter-link;
+        text-decoration: none;
+        &:hover {
+          color: $hc-primary;
+        }
+      }
+    }
+    .hero__note--release {
+      h3 {
+        letter-spacing: $letter-space-1;
+      }
+    }
+    .download {
+      a {
+        background-color: $c-primary;
+        color: $c-letter-black;
+        border-radius: $radius-1;
+        text-decoration: none;
+        display: flex;
+        font-weight: $bold;
+        &:hover {
+          background-color: $hc-primary;
+        }
+      }
+    }
+  }
+  .hero__footer {
+    grid-area: footer;
+    display: grid;
+    justify-content: center;
+    > p {
+      line-height: $lh-paragraph;
+      color: $c-letter-dark;
+      a {
+        color: $c-letter-link;
+        text-decoration: none;
+        &:hover {
+          color: $hc-primary;
+        }
+      }
+    }
+    > ul {
+      display: flex;
+      justify-content: space-between;
+      a {
+        line-height: $lh-paragraph;
+        color: $c-letter-link;
+        text-decoration: none;
+        &:hover {
+          color: $hc-primary;
+        }
+      }
+    }
+  }
 }
 
 .main {
