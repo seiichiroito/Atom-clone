@@ -91,6 +91,30 @@ $space-3: 24px;
 .m-3 {
   margin: $space-3;
 }
+
+// Section Spacing
+.mt-s-sec {
+  margin-top: 50px;
+}
+.my-s-sec {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.mt-m-sec {
+  margin-top: 100px;
+}
+.my-m-sec {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.mt-l-sec {
+  margin-top: 150px;
+}
+.my-l-sec {
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
 //* Padding
 // space 2
 .pr-2 {
