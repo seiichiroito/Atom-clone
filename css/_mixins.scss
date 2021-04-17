@@ -149,3 +149,27 @@ $space-3: 24px;
 .p-3 {
   padding: $space-3;
 }
+
+// Button
+.btn {
+  padding: $space-1 $space-2;
+  color: $c-letter-black;
+  text-decoration: none;
+  border-radius: $radius-1;
+  font-weight: $fw-bold;
+  line-height: $lh-paragraph;
+}
+
+.btn-primary {
+  background-color: $c-primary;
+  &:hover {
+    background-color: $hc-primary;
+  }
+}
+
+.btn-secondary {
+  background-color: $c-secondary;
+  &:hover {
+    background-color: $hc-secondary;
+  }
+}

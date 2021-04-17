@@ -1,8 +1,8 @@
-@use "variables" as *;
+@use "./animation" as *;
 
-////////////* GENERAL *////////////
+////////////////////////? GENERAL ?////////////////////////
 * {
-  // outline: 1px solid #555;
+  outline: 1px solid #555;
 }
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
@@ -18,14 +18,10 @@ body {
 }
 
 .container {
-  padding: 0 20px;
-  max-width: 445px;
+  padding: 0 30px;
   margin: 0 auto;
   display: flex;
   flex: 1;
-  @media (min-width: 900px) {
-    max-width: 854px;
-  }
 }
 .container-grid {
   display: grid;
@@ -36,7 +32,7 @@ body {
   }
 }
 
-////////////* HEADER *////////////
+////////////////////////? HEADER ?////////////////////////
 .header {
   height: 63px;
   background-color: $bgc-header;
@@ -44,205 +40,411 @@ body {
   @media (min-width: 900px) {
     height: 43px;
   }
-  .header__container {
-    justify-content: center;
-    @media (min-width: 900px) {
-      justify-content: space-between;
-    }
+}
+
+.header__container {
+  max-width: 445px;
+  justify-content: center;
+  @media (min-width: 900px) {
+    max-width: 854px;
+    justify-content: space-between;
   }
-  .header__navbar {
-    display: flex;
-    align-items: center;
-    a {
-      color: $c-header;
-      text-decoration: none;
-      &:hover {
-        color: $hc-header;
-      }
-    }
-  }
-  .header__sign-in {
-    display: flex;
-    a {
-      color: $c-header;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      &:hover {
-        color: $hc-header;
-      }
-    }
-    img {
-      width: 13px;
-      height: 16px;
+}
+
+.header__navbar {
+  display: flex;
+  align-items: center;
+  a {
+    color: $c-header;
+    text-decoration: none;
+    &:hover {
+      color: $hc-header;
     }
   }
 }
 
-////////////* HERO *//////////
+.header__sign-in {
+  display: flex;
+  a {
+    color: $c-header;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    &:hover {
+      color: $hc-header;
+    }
+  }
+  img {
+    width: 13px;
+    height: 16px;
+  }
+}
+
+////////////////////////? HERO ?////////////////////////
 .hero {
   background-color: $bgc-main;
-  .hero__container {
+}
+
+.hero__container {
+  grid-template-areas:
+    ". . . ."
+    ". . . ."
+    "header header header header"
+    ". . . ."
+    "main main main main"
+    "footer footer footer footer";
+
+  @media screen and (min-width: 900px) {
+    max-width: 854px;
+
     grid-template-areas:
-      ". . . ."
-      ". . . ."
-      "header header header header"
-      ". . . ."
-      "main main main main"
-      "footer footer footer footer";
-
-    @media screen and (min-width: 900px) {
-      grid-template-areas:
-        ". . . . . . . ."
-        ". . . . . . . ."
-        "header header header header header header header header"
-        ". . . . . . . ."
-        "main main main main main main main main"
-        "footer footer footer footer footer footer footer footer";
-    }
-    @media screen and (min-width: 1100px) {
-      grid-template-areas:
-        ". . . . . . . ."
-        ". . . . . . . ."
-        "header header header header header main main main"
-        "header header header header header main main main"
-        "footer footer footer footer footer footer footer footer";
-    }
-    @media screen and (min-width: 100px) and (min-height: 1000px) {
-      grid-template-areas:
-        ". . . . . . . ."
-        ". . . . . . . ."
-        "header header header header header header header header"
-        ". . . . . . . ."
-        "main main main main main main main main"
-        "footer footer footer footer footer footer footer footer";
-    }
+      ". . . . . . . ."
+      ". . . . . . . ."
+      "header header header header header header header header"
+      ". . . . . . . ."
+      "main main main main main main main main"
+      "footer footer footer footer footer footer footer footer";
   }
-  .hero__header {
-    grid-area: header;
-    height: 360px;
+  @media screen and (min-width: 1100px) {
+    grid-template-areas:
+      ". . . . . . . ."
+      ". . . . . . . ."
+      "header header header header header main main main"
+      "header header header header header main main main"
+      "footer footer footer footer footer footer footer footer";
+  }
+  @media screen and (min-width: 100px) and (min-height: 1000px) {
+    grid-template-areas:
+      ". . . . . . . ."
+      ". . . . . . . ."
+      "header header header header header header header header"
+      ". . . . . . . ."
+      "main main main main main main main main"
+      "footer footer footer footer footer footer footer footer";
+  }
+}
+
+////////////* HERO HEADER *////////////
+.hero__header {
+  grid-area: header;
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.atom-circles {
+  position: absolute;
+  transform: translate(-183px, -183px);
+  img {
+    position: absolute;
+    width: 366px;
+    height: 366px;
+  }
+}
+
+.atom-blue {
+  position: absolute;
+  transform: translate(-280px, -100px);
+  display: none;
+  @media screen and (min-width: 660px) {
+    display: block;
+  }
+}
+
+////////////* HERO MAIN *////////////
+.hero__main {
+  grid-area: main;
+  display: flex;
+  justify-content: center;
+}
+
+.hero__version {
+  border-radius: $radius-2;
+  border: 1px solid $c-border;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 1100px) and (min-height: 1000px) {
+    flex-direction: row;
+  }
+  li {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-
-    position: relative;
-    .atom-circles {
-      position: absolute;
-      img {
-        transform: translate(-50%, -50%);
-        position: absolute;
-      }
-    }
-    .atom-blue {
-      position: absolute;
-      transform: translate(-280px, -100px);
+  }
+  li + li {
+    border-top: 1px solid $c-border;
+    @media screen and (min-width: 1100px) and (min-height: 1000px) {
+      border-top: initial;
+      border-left: 1px solid $c-border;
     }
   }
-  .hero__main {
-    grid-area: main;
-    display: flex;
-    justify-content: center;
-    ul {
-      border-radius: $radius-2;
-      border: 1px solid $c-border;
-      display: flex;
-      flex-direction: column;
-
-      @media screen and (min-width: 1100px) and (min-height: 1000px) {
-        flex-direction: row;
-      }
-      li {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-      li + li {
-        border-top: 1px solid $c-border;
-        @media screen and (min-width: 1100px) and (min-height: 1000px) {
-          border-top: initial;
-          border-left: 1px solid $c-border;
-        }
-      }
-    }
-    .hero__note {
-      align-items: center;
-      h3 {
-        font-size: $fz-heading-3;
-        color: $c-letter;
-        line-height: $lh-header;
-      }
-      p {
-        color: $c-letter-dark;
-        font-size: $fz-paragraph;
-        line-height: $lh-paragraph;
-      }
-      a {
-        color: $c-letter-link;
-        text-decoration: none;
-        &:hover {
-          color: $hc-primary;
-        }
-      }
-    }
-    .hero__note--release {
-      h3 {
-        letter-spacing: $letter-space-1;
-      }
-    }
-    .download {
-      a {
-        background-color: $c-primary;
-        color: $c-letter-black;
-        border-radius: $radius-1;
-        text-decoration: none;
-        display: flex;
-        font-weight: $bold;
-        &:hover {
-          background-color: $hc-primary;
-        }
-      }
-    }
+}
+.hero__note {
+  align-items: center;
+  h3 {
+    font-size: $fz-heading-3;
+    color: $c-letter;
+    line-height: $lh-header;
   }
-  .hero__footer {
-    grid-area: footer;
-    display: grid;
-    justify-content: center;
-    > p {
-      line-height: $lh-paragraph;
-      color: $c-letter-dark;
-      a {
-        color: $c-letter-link;
-        text-decoration: none;
-        &:hover {
-          color: $hc-primary;
-        }
-      }
-    }
-    > ul {
-      display: flex;
-      justify-content: space-between;
-      a {
-        line-height: $lh-paragraph;
-        color: $c-letter-link;
-        text-decoration: none;
-        &:hover {
-          color: $hc-primary;
-        }
-      }
+  p {
+    color: $c-letter-dark;
+    font-size: $fz-paragraph;
+    line-height: $lh-paragraph;
+  }
+  a {
+    color: $c-letter-link;
+    text-decoration: none;
+    &:hover {
+      color: $hc-primary;
     }
   }
 }
 
+.hero__note--release {
+  h3 {
+    letter-spacing: $letter-space-1;
+  }
+}
+
+.download {
+  a {
+    background-color: $c-primary;
+    color: $c-letter-black;
+    border-radius: $radius-1;
+    text-decoration: none;
+    display: flex;
+    font-weight: $fw-bold;
+    &:hover {
+      background-color: $hc-primary;
+    }
+  }
+}
+
+////////////* HERO FOOTER *////////////
+.hero__footer {
+  grid-area: footer;
+  display: grid;
+  justify-content: center;
+}
+
+.hero__term {
+  line-height: $lh-paragraph;
+  color: $c-letter-dark;
+  a {
+    color: $c-letter-link;
+    text-decoration: none;
+    &:hover {
+      color: $hc-primary;
+    }
+  }
+}
+
+.hero__other-version {
+  display: flex;
+  justify-content: space-between;
+  a {
+    line-height: $lh-paragraph;
+    color: $c-letter-link;
+    text-decoration: none;
+    &:hover {
+      color: $hc-primary;
+    }
+  }
+}
+
+////////////////////////? MAIN ?////////////////////////
 .main {
   //   height: 100vh;
   background-color: $bgc-main;
+  overflow: hidden;
+}
+.main__container {
+  max-width: 580px;
+  grid-template-areas:
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    "header header header header"
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    "content-1 content-1 content-1 content-1"
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    "content-2 content-2 content-2 content-2";
+  @media (min-width: 900px) {
+    grid-template-areas:
+      ". . . . . . . ."
+      ". . . . . . . ."
+      ". . . . . . . ."
+      "header header header header header header header header"
+      ". . . . . . . ."
+      ". . . . . . . ."
+      ". . . . . . . ."
+      "content-1 content-1 content-1 content-1 content-1 content-1 content-1 content-1"
+      ". . . . . . . ."
+      ". . . . . . . ."
+      ". . . . . . . ."
+      "content-2 content-2 content-2 content-2 content-2 content-2 content-2 content-2"
+      ". . . . . . . ."
+      ". . . . . . . .";
+  }
+  @media (min-width: 1100px) {
+    max-width: 854px;
+  }
+}
+.main__header {
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  h1 {
+    color: $c-letter;
+    font-size: $fz-heading-1;
+    font-weight: $fw-light;
+    line-height: $lh-header;
+    span {
+      color: $c-secondary-600;
+    }
+  }
+}
+.main__content {
+  position: relative;
+  padding: 0 20px;
+  display: grid;
+  row-gap: 40px;
+  column-gap: 60px;
+  grid-auto-rows: minmax(20px, auto);
+  grid-template-areas:
+    "title"
+    "first-paragraph"
+    "example"
+    "second-paragraph"
+    "button";
+  &.main__content--left {
+    grid-area: content-1;
+    @media screen and (min-width: 1100px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        ". example"
+        "title example"
+        "first-paragraph example"
+        "second-paragraph example"
+        "button example"
+        ". example";
+    }
+  }
+  &.main__content--right {
+    grid-area: content-2;
+    @media screen and (min-width: 1100px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "example ."
+        "example title"
+        "example first-paragraph"
+        "example second-paragraph"
+        "example button"
+        "example .";
+    }
+  }
+}
+.rainbow {
+  position: absolute;
+  right: 90%;
+  @media screen and (min-width: 1100px) {
+    top: -5%;
+    right: 115%;
+  }
+}
+.atom-orange {
+  position: absolute;
+  left: 90%;
+  top: -15%;
+  @media screen and (min-width: 1100px) {
+    // top: -5%;
+    // right: 115%;
+  }
 }
 
+.main__title {
+  grid-area: title;
+  font-size: $fz-heading-2;
+  color: $c-letter;
+  line-height: $lh-header;
+  font-weight: $fw-light;
+}
+
+.main__first-paragraph {
+  grid-area: first-paragraph;
+  font-size: $fz-body;
+  color: $c-letter;
+  line-height: $lh-paragraph;
+}
+
+.main__example {
+  grid-area: example;
+  position: relative;
+  transition: all 1s ease;
+  img {
+    width: 100%;
+    @media screen and (min-width: 1100px) {
+      position: absolute;
+      width: initial;
+      height: 488px;
+    }
+  }
+  &.main__example--left {
+    filter: brightness(0.75) contrast(1) sepia(0.7) hue-rotate(-5deg)
+      saturate(3.5);
+    &:hover {
+      filter: none;
+    }
+    img {
+      left: 0;
+    }
+  }
+  &.main__example--right {
+    filter: brightness(0.7) contrast(1) sepia(1) hue-rotate(115deg)
+      saturate(1.5);
+    &:hover {
+      filter: none;
+    }
+    img {
+      right: 0;
+    }
+  }
+}
+
+.main__second-paragraph {
+  grid-area: second-paragraph;
+  font-size: $fz-body;
+  color: $c-letter;
+  line-height: $lh-paragraph;
+  a {
+    color: $c-primary;
+    text-decoration: none;
+    &:hover {
+      color: $hc-primary;
+    }
+  }
+}
+
+.main__button {
+  grid-area: button;
+  display: flex;
+}
+
+////////////////////////? CONTACT ?////////////////////////
 .contact {
-  //   height: 804px;n
   background-color: $bgc-contact;
 }
+
+////////////////////////? FOOTER ?////////////////////////
 .footer {
-  //   height: 136px;
   background-color: $bgc-footer;
 }

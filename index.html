@@ -20,10 +20,10 @@
           <li class="mx-1"><a href="#">Discuss</a></li>
         </ul>
         <div class="header__sign-in">
-          <a href="#"
-            ><img class="mx-1" src="/images/sign-in.png" alt="sign in" /> Sign
-            in</a
-          >
+          <a href="#">
+            <img class="mx-1" src="/images/sign-in.png" alt="sign in" />
+            Sign in
+          </a>
         </div>
       </div>
     </header>
@@ -50,7 +50,7 @@
           </div>
         </div>
         <div class="hero__main">
-          <ul>
+          <ul class="hero__version">
             <li class="px-2 py-3"><img src="/images/atom.svg" alt="atom" /></li>
             <li class="hero__note hero__note--release p-2">
               <h3>1.56.0</h3>
@@ -61,19 +61,19 @@
               <p>For macOS 10.10 or later</p>
             </li>
             <li class="download p-2">
-              <a class="p-3" href="#"
-                ><img class="mr-1" src="/images/download.png" alt="download" />
-                DownLoad</a
-              >
+              <a class="p-3" href="#">
+                <img class="mr-1" src="/images/download.png" alt="download" />
+                DownLoad
+              </a>
             </li>
           </ul>
         </div>
         <div class="hero__footer">
-          <p class="mt-3">
+          <p class="hero__term mt-3">
             By downloading, you agree to the
             <a href="#">Terms and Conditions</a>
           </p>
-          <ul class="mt-3">
+          <ul class="hero__other-version mt-3">
             <li><a href="#">Other platform</a></li>
             <li><a href="#">Try Atom Beta</a></li>
             <li><a href="#">Try Atom Nightly</a></li>
@@ -83,7 +83,69 @@
     </section>
 
     <!-- MAIN -->
-    <section class="main section"></section>
+    <section class="main section">
+      <div class="container container-grid main__container">
+        <div class="main__header">
+          <h1>A hackable <span>text editor</span> for the 21st Century</h1>
+        </div>
+        <div class="main__content main__content--left">
+          <img src="/images/rainbow.svg" alt="rainbow" class="rainbow" />
+
+          <h2 class="main__title">Teletype for Atom</h2>
+          <p class="main__first-paragraph">
+            Great things happen when developers work together—from teaching and
+            sharing knowledge to building better software. Teletype for Atom
+            makes collaborating on code just as easy as it is to code alone,
+            right from your editor.
+          </p>
+          <div class="main__example main__example--left">
+            <img
+              src="/images/content-1.png"
+              alt="content 1"
+              class="main__example"
+            />
+          </div>
+          <p class="main__second-paragraph">
+            Share your workspace and edit code together in real time. To start
+            collaborating, <a href="#">open Teletype in Atom</a> and install the
+            package.
+          </p>
+          <div class="main__button">
+            <a href="#" class="btn btn-primary">Learn more</a>
+          </div>
+        </div>
+        <div class="main__content main__content--right">
+          <img
+            src="/images/atom-orange.svg"
+            alt="orange atom"
+            class="atom-orange"
+          />
+
+          <h2 class="main__title">Github for Atom</h2>
+          <p class="main__first-paragraph">
+            A text editor is at the core of a developer’s toolbox, but it
+            doesn't usually work alone. Work with Git and GitHub directly from
+            Atom with the GitHub package.
+          </p>
+          <div class="main__example main__example--right">
+            <img
+              src="/images/content-2.png"
+              alt="content 2"
+              class="main__example"
+            />
+          </div>
+          <p class="main__second-paragraph">
+            Create new branches, stage and commit, push and pull, resolve merge
+            conflicts, view pull requests and more—all from within your editor.
+            The GitHub package is already bundled with Atom, so you're ready to
+            go!
+          </p>
+          <div class="main__button">
+            <a href="#" class="btn btn-secondary">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- CONTACT -->
     <section class="contact section"></section>
     <!-- FOOTER -->
