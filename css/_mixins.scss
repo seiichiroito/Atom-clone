@@ -96,12 +96,18 @@ $space-3: 24px;
 .mt-s-sec {
   margin-top: 50px;
 }
+.mb-s-sec {
+  margin-bottom: 50px;
+}
 .my-s-sec {
   margin-top: 50px;
   margin-bottom: 50px;
 }
 .mt-m-sec {
   margin-top: 100px;
+}
+.mb-m-sec {
+  margin-bottom: 100px;
 }
 .my-m-sec {
   margin-top: 100px;
@@ -110,12 +116,43 @@ $space-3: 24px;
 .mt-l-sec {
   margin-top: 150px;
 }
+.mb-l-sec {
+  margin-bottom: 150px;
+}
 .my-l-sec {
   margin-top: 150px;
   margin-bottom: 150px;
 }
 
 //* Padding
+// space 1
+.pr-1 {
+  padding-right: $space-1;
+}
+.pl-1 {
+  padding-left: $space-1;
+}
+.pt-1 {
+  padding-top: $space-1;
+}
+.pb-1 {
+  padding-bottom: $space-1;
+}
+.px-1 {
+  padding: {
+    left: $space-1;
+    right: $space-1;
+  }
+}
+.py-1 {
+  padding: {
+    top: $space-1;
+    bottom: $space-1;
+  }
+}
+.p-1 {
+  padding: $space-1;
+}
 // space 2
 .pr-2 {
   padding-right: $space-2;
